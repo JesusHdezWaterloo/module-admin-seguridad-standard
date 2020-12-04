@@ -29,15 +29,18 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
 
     private String descripcion;
 
+    private RolDomain rolFk;
+
     public UsuarioDomain() {
     }
 
-    public UsuarioDomain(String username, String email, String password, String salt, String descripcion) {
+    public UsuarioDomain(String username, String email, String password, String salt, String descripcion, RolDomain rolFk) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.salt = salt;
         this.descripcion = descripcion;
+        this.rolFk = rolFk;
     }
 
     public Integer getIdUser() {
@@ -86,6 +89,14 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public RolDomain getRolFk() {
+        return rolFk;
+    }
+
+    public void setRolFk(RolDomain rolFk) {
+        this.rolFk = rolFk;
     }
 
     @Override

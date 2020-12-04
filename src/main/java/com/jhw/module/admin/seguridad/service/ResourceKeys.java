@@ -10,5 +10,5 @@ package com.jhw.module.admin.seguridad.service;
  * @author Jesus Hernandez Barrios (jhernandezb96@gmail.com)
  */
 public class ResourceKeys {
-    
+
 }
