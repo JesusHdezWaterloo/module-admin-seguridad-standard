@@ -43,6 +43,15 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
         this.rolFk = rolFk;
     }
 
+    /**
+     * Aqui es donde se forma el relajo de mexclarla con el salt y demas
+     *
+     * @return
+     */
+    public String getPublicPassword() {
+        return password;
+    }
+
     public Integer getIdUser() {
         return idUser;
     }
