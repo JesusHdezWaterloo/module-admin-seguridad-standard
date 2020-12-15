@@ -25,8 +25,6 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
 
     private String password;
 
-    private String salt;
-
     private String descripcion;
 
     private RolDomain rolFk;
@@ -34,11 +32,10 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
     public UsuarioDomain() {
     }
 
-    public UsuarioDomain(String username, String email, String password, String salt, String descripcion, RolDomain rolFk) {
+    public UsuarioDomain(String username, String email, String password, String descripcion, RolDomain rolFk) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.salt = salt;
         this.descripcion = descripcion;
         this.rolFk = rolFk;
     }
@@ -82,14 +79,6 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public String getDescripcion() {
