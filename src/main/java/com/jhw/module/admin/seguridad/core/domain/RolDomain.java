@@ -6,7 +6,10 @@
 package com.jhw.module.admin.seguridad.core.domain;
 
 import com.clean.core.utils.SortBy;
+import com.jhw.module.admin.seguridad.service.ResourceKeys;
 import com.jhw.utils.clean.EntityDomainObjectValidated;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -17,10 +20,13 @@ public class RolDomain extends EntityDomainObjectValidated {
 
     private Integer idRol;
 
+    @NotEmpty(message = ResourceKeys.KEY_ROL_NOMBRE_VACIO)
+    @Size(max = 95, message = ResourceKeys.KEY_ROL_NOMBRE_LARGO)
     private String nombreRol;
 
     private int nivelAcceso;
 
+    @Size(max = 95, message = ResourceKeys.KEY_GENERAL_DESCRICION_LARGA)
     private String descripcion;
 
     public RolDomain() {
