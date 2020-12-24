@@ -6,8 +6,12 @@
 package com.jhw.module.admin.seguridad.core.domain;
 
 import com.clean.core.utils.SortBy;
+import com.jhw.module.admin.seguridad.service.ResourceKeys;
 import com.jhw.utils.clean.EntityDomainObjectValidated;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 /**
  *
@@ -18,15 +22,19 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
 
     private Integer idUser;
 
+    @NotEmpty(message = ResourceKeys.KEY_USUARIO_NOMBRE_VACIO)
+    @Size(max = 95, message = ResourceKeys.KEY_USUARIO_NOMBRE_LARGO)
     private String username;
 
-    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "Invalid email")
+    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = ResourceKeys.KEY_USUARIO_EMAIL_INVALID)
     private String email;
 
     private String password;
 
+    @Size(max = 95, message = ResourceKeys.KEY_GENERAL_DESCRICION_LARGA)
     private String descripcion;
 
+    @NotNull(message = ResourceKeys.KEY_USUARIO_ROL_NULL)
     private RolDomain rolFk;
 
     public UsuarioDomain() {
@@ -38,15 +46,6 @@ public class UsuarioDomain extends EntityDomainObjectValidated {
         this.password = password;
         this.descripcion = descripcion;
         this.rolFk = rolFk;
-    }
-
-    /**
-     * Aqui es donde se forma el relajo de mexclarla con el salt y demas
-     *
-     * @return
-     */
-    public String getPublicPassword() {
-        return password;
     }
 
     public Integer getIdUser() {
