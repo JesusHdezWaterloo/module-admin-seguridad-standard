@@ -5,9 +5,9 @@
  */
 package com.jhw.module.admin.seguridad.core.domain;
 
-import com.clean.core.utils.SortBy;
+import com.root101.clean.core.utils.SortBy;
 import com.jhw.module.admin.seguridad.service.ResourceKeys;
-import com.jhw.utils.clean.EntityDomainObjectValidated;
+import com.root101.utils.clean.EntityDomainObjectValidated;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
