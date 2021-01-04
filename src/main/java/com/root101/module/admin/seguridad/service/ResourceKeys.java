@@ -25,6 +25,9 @@ public class ResourceKeys {
 
     //---------------------------- GENERAL ----------------------------\\
     public static final String KEY_GENERAL_DESCRICION_LARGA = "#msg.module.admin.seguridad.validation.descripcion_larga#";
+    
+    public static final String KEY_MODULE_NAME_SEG = "com.root101.module.admin.seguridad.name";
+   
     //---------------------------- GENERAL ----------------------------\\
 
     //---------------------------- ROL ----------------------------\\
